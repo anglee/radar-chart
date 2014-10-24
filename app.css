@@ -10,3 +10,8 @@ body {
     top: 50px;
     left: 100px;
 }
+
+
+.clickable {
+    cursor: pointer;
+}
