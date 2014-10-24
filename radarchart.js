@@ -141,6 +141,12 @@ var RadarChart = {
           })
           .style("fill", function(j, i){return cfg.color(series)})
           .style("fill-opacity", cfg.opacityArea)
+          .on("mouseover", function(d, i) {
+            setItemsInFocus([viewModel[x]], true);
+          })
+          .on("mouseout", function(d, i) {
+            setItemsInFocus([viewModel[x]], false);
+          })
       series++;
     });
     series=0;
@@ -165,8 +171,15 @@ var RadarChart = {
           })
           .attr("data-id", function(j){return j.axis})
           .style("fill", cfg.color(series)).style("fill-opacity", .9)
+          .on("mouseover", function(d, i) {
+            setItemsInFocus([viewModel[x]], true);
+          })
+          .on("mouseout", function(d, i) {
+            setItemsInFocus([viewModel[x]], false);
+          })
           .append("svg:title")
-          .text(function(j){return Math.max(j.value, 0)});
+          .text(function(j){return Math.max(j.value, 0)})
+
 
       series++;
     });

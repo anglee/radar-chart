@@ -156,13 +156,13 @@ var refresh = function() {
   _.forEach(viewModel, function(series, i) {
     if (series.visible) {
       if (series.inFocus) {
-        d3.selectAll("polygon.radar-chart-serie" + i).style("fill-opacity",.5).style("stroke-opacity", 0.75);
+        d3.selectAll("polygon.radar-chart-serie" + i).transition(200).style("fill-opacity",.5).style("stroke-opacity", 0.75);
       } else {
-        d3.selectAll("polygon.radar-chart-serie" + i).style("fill-opacity",.1).style("stroke-opacity", 0.5);
+        d3.selectAll("polygon.radar-chart-serie" + i).transition(200).style("fill-opacity",.1).style("stroke-opacity", 0.5);
       }
-      d3.selectAll("circle.radar-chart-serie" + i).style("fill-opacity",0.9).style("stroke-opacity", 1);
+      d3.selectAll("circle.radar-chart-serie" + i).transition(200).style("fill-opacity",0.9).style("stroke-opacity", 1);
     } else {
-      d3.selectAll(".radar-chart-serie" + i).style("fill-opacity",.0).style("stroke-opacity", "0.0");
+      d3.selectAll(".radar-chart-serie" + i).transition(200).style("fill-opacity",.0).style("stroke-opacity", "0.0");
     }
   });
   d3.selectAll("rect.legendrect").style("fill", function(d, i) {
