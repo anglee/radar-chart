@@ -2,6 +2,10 @@ var w = 500,
     h = 500;
 
 var colorscale = d3.scale.category10();
+//var colorscale = function(i) {
+//  return ["#AA3939", "#AA7239", "#AA8C39", "#AAA239",
+//  "#84A136", "#2D882D", "#265B6A", "#323776"][i];
+//};
 
 
 
